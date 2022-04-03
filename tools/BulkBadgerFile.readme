@@ -1,0 +1,32 @@
+How to use BulkBadgerFile.ps1
+
+Requirements: rshell (https://github.com/dhylands/rshell)
+
+Single badge creation:
+1) Plug in the Badger2040 to your computer.
+2) Run BulkBadgerFile.ps1 with no command line arguments.
+3) Follow the prompts for the following:
+  a) Company Name: Text to display in the header
+  b) Badge Name: Badge name of the individual
+  c) Job Name: The role you want to have displayed on the badge
+  d) Badge Number: Badge number to display.  Can be alpha numeric string.
+4) A list of available serial ports will be displayed.  Should be only one value displayed.  If there are multiples check for the correct device in Device Manager.
+5) Wait for the process to finish.
+6) Reset the Badger2040.
+7) Navigate to the "Badge" app and select it.
+8) Review the results.
+
+Batch badge creation:
+1) Export a CSV document and use the following headers:
+  a) Company: Text to display in the header
+  b) BadgeName: Badge name of the individual
+  c) Role: The name of the job for the badges (Ex: Division, Role, Team, Rank etc..)
+  d) Job: The role the person will have (Ex: Rocket Scientist, Fursuiter, Programmer, Starfighter etc..)
+  e) Badge Number: Badge number to display.  Can be alpha numeric string.
+2) Save the file in a easy to access location.
+3) Run the script with the -Path parameter
+  Ex: BulkBadgerFile.ps1 -Path C:\Temp\Badgelist.csv
+4) Give the location of the badge.py script to be uploaded.
+5) Give the location of the badge_image.bin to be uploaded.  This could be a copmany logo.
+6) A list of COM ports will be displayed.  If you have only one showing, enter that COM Port number in the COM# format.
+  a) If more than one appear, check the "Ports (COM & LPT)" section in Device manager for the correct one.
